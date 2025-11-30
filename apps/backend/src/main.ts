@@ -22,7 +22,8 @@ app.use(cors({
     // 2. ลิงก์จาก Vercel (ใส่ให้ครบ 3 อันเลย กันพลาด)
     'https://portfolio-monorepo.vercel.app', 
     'https://portfolio-monorepo-git-main-phuwadon663040128-2.vercel.app',
-    'https://portfolio-monorepo-phuwadon663040128-2.vercel.app'
+    'https://portfolio-monorepo-phuwadon663040128-2.vercel.app',
+    'https://portfolio-monorepo-ivory.vercel.app'
   ],
   credentials: true 
 }));

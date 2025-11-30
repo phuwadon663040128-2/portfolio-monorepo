@@ -14,22 +14,19 @@ const app = express();
 // 2. Middleware
 // ⚠️ แก้ไข CORS: อนุญาตให้ Vercel เข้าถึงได้ (ใส่ * เพื่อให้เทสง่ายก่อน)
 app.use(cors({
-  origin: [
-    // 1. สำหรับรันในเครื่อง (ห้ามลบ)
-    'http://localhost:3000',
-    'http://localhost:4200',
+  origin: (origin, callback) => {
+    // กรณีที่ 1: ไม่มี origin (เช่น ยิงจาก Postman หรือ Server-to-Server) -> อนุญาต
+    if (!origin) return callback(null, true);
 
-    // 2. ลิงก์จาก Vercel (ใส่ให้ครบ 3 อันเลย กันพลาด)
-    'https://portfolio-monorepo.vercel.app', 
-    'https://portfolio-monorepo-git-main-phuwadon663040128-2.vercel.app',
-    'https://portfolio-monorepo-phuwadon663040128-2.vercel.app',
-    'https://portfolio-monorepo-ivory.vercel.app',
-    `portfolio-monorepo-git-main-phuwadons-projects-278635cc.vercel.app`,
-    `portfolio-monorepo-9wsrgozy8-phuwadons-projects-278635cc.vercel.app`,
-    `https://portfolio-monorepo-git-main-phuwadons-projects-278635cc.vercel.app/`,
-    `https://portfolio-monorepo-git-main-phuwadons-projects-278635cc.vercel.app/`
-  ],
-  credentials: true 
+    // กรณีที่ 2: มาจาก Localhost หรือ Vercel (ไม่ว่าชื่อข้างหน้าจะเป็นอะไรขอแค่ลงท้ายด้วย .vercel.app) -> อนุญาต
+    if (origin.includes('localhost') || origin.endsWith('.vercel.app')) {
+      return callback(null, true);
+    }
+
+    // กรณีที่ 3: นอกเหนือจากนี้ -> บล็อก
+    callback(new Error('Not allowed by CORS'));
+  },
+  credentials: true
 }));
 
 app.use(express.json()); // เพื่อแปลง req.body เป็น JSON

@@ -23,7 +23,9 @@ app.use(cors({
     'https://portfolio-monorepo.vercel.app', 
     'https://portfolio-monorepo-git-main-phuwadon663040128-2.vercel.app',
     'https://portfolio-monorepo-phuwadon663040128-2.vercel.app',
-    'https://portfolio-monorepo-ivory.vercel.app'
+    'https://portfolio-monorepo-ivory.vercel.app',
+    `portfolio-monorepo-git-main-phuwadons-projects-278635cc.vercel.app`,
+    `portfolio-monorepo-9wsrgozy8-phuwadons-projects-278635cc.vercel.app`
   ],
   credentials: true 
 }));

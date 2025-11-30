@@ -14,7 +14,16 @@ const app = express();
 // 2. Middleware
 // ⚠️ แก้ไข CORS: อนุญาตให้ Vercel เข้าถึงได้ (ใส่ * เพื่อให้เทสง่ายก่อน)
 app.use(cors({
-  origin: '*', 
+  origin: [
+    // 1. สำหรับรันในเครื่อง (ห้ามลบ)
+    'http://localhost:3000',
+    'http://localhost:4200',
+
+    // 2. ลิงก์จาก Vercel (ใส่ให้ครบ 3 อันเลย กันพลาด)
+    'https://portfolio-monorepo.vercel.app', 
+    'https://portfolio-monorepo-git-main-phuwadon663040128-2.vercel.app',
+    'https://portfolio-monorepo-phuwadon663040128-2.vercel.app'
+  ],
   credentials: true 
 }));
 

@@ -90,7 +90,7 @@ export function ContactSection() {
                 <div className="contact-icon-box"><img src="/cv.png" alt="CV Icon" /></div>
                 <div className="cv-text-box">
                     <p className="cv-title">ดาวน์โหลด CV</p>
-                    <Link href="/CV-1282.pdf" target="_blank" rel="noopener noreferrer" className="cv-download-btn">
+                    <Link href="/CV_Phuwadon_Thongrong.pdf" target="_blank" rel="noopener noreferrer" className="cv-download-btn">
                         <span>ดาวน์โหลด</span>
                         <span className="arrow">→</span>
                     </Link>

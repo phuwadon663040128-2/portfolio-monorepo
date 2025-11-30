@@ -22,7 +22,7 @@ export function AboutSection() {
         </div>
 
         <div className="about-buttons">
-            <Link href="/CV-1282.pdf" target="_blank" rel="noopener noreferrer" className="about-btn-portfolio"> 
+            <Link href="/CV_Phuwadon_Thongrong.pdf" target="_blank" rel="noopener noreferrer" className="about-btn-portfolio"> 
                 <p>ดาวน์โหลด CV</p>
             </Link>
 

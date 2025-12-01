@@ -2201,10 +2201,16 @@ body {
 @media screen and (max-width: 1024px) {
 
   /* 1. GLOBAL SETTINGS (บังคับใช้ฟอนต์ทุกที่) */
-  body, button, input, textarea, a, p, h1, h2, h3, h4, h5, h6, span, div {
+  body, button, input, textarea, a, p, h1, h2, h3, h4, h5, h6, span, div, li {
     font-family: 'Noto Looped Thai', sans-serif !important;
     font-style: normal;
   }
+  .detail-section li {
+  font-size: 16px;
+  line-height: 26px;
+  color: #BCBCBC;
+  margin: 0;
+}
 
   body {
     background-color: #141718;
@@ -2658,6 +2664,7 @@ body {
     text-align: left;
   }
   .contact-icon-box {
+    flex-shrink: 0;
     width: 86px !important;
     height: 86px !important;
     background: rgba(255, 255, 255, 0.3) !important;
@@ -2876,6 +2883,9 @@ body {
     font-size: 24px;
     display: flex;
     align-items: center;
+    /* เพิ่มระยะห่างระหว่างไอคอนกับข้อความ */
+    margin-right: 5px;
+    margin-bottom: 3px;
   }
 
   .breadcrumb-text {
@@ -2968,8 +2978,9 @@ body {
 
   /* เนื้อหา (Description) */
   .detail-section {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
+  
 
   .detail-section h2 {
     font-size: 20px;
@@ -2999,7 +3010,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 60px;
     font-size: 14px;
-    color: #FFFFFF;
+    color: #7EB1CA;
   }
 
   /* 6. ปุ่ม Action (GitHub & Demo) - ปรับตาม Figma Frame 116, 123 */
